@@ -29,6 +29,7 @@ let persons = [
 
 app.use(cors())
 app.use(express.json())
+app.use(express.static('build'))
 app.use(morgan(':method :url :status :res[content-length] - :response-time ms :post')); // https://github.com/expressjs/morgan -> tony + oma tekemä post
 
 morgan.token('post', (req) => {   // jos POST metodi niin palautetaan json stringinä body. Tokeneista: https://github.com/expressjs/morgan#creating-new-tokens
